@@ -16,7 +16,7 @@ public class PickupKeyTrigger : MonoBehaviour
     {
         if (collider.gameObject.name == "PlayerCapsule")
         {
-            keyPickupText.active = true;
+            keyPickupText.SetActive(true);
             inCollider = true;
         }   
     }
@@ -25,7 +25,7 @@ public class PickupKeyTrigger : MonoBehaviour
     {
         if (collider.gameObject.name == "PlayerCapsule")
         {
-            keyPickupText.active = false;
+            keyPickupText.SetActive(false);
             inCollider = false;
         }
     }
@@ -34,11 +34,11 @@ public class PickupKeyTrigger : MonoBehaviour
     {
         if (inCollider && Input.GetKey(KeyCode.E))
         {
-            keyPickupText.active = false;
-            key.active = false;
-            deer.active = true;
-            deerJumpscareCollider.active = true;
-            gateCollider.active = true;
+            keyPickupText.SetActive(false);
+            key.SetActive(false);
+            deer.SetActive(true);
+            deerJumpscareCollider.SetActive(true);
+            gateCollider.SetActive(true);
             GetComponent<BoxCollider>().enabled = false;
         }
     }

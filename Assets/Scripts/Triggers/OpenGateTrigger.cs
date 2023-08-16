@@ -17,14 +17,14 @@ public class OpenGateTrigger : MonoBehaviour
     {
         if (other.gameObject.name == "PlayerCapsule")
         {
-            gateOpenText.active = true;
+            gateOpenText.SetActive(true);
             inCollider = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        gateOpenText.active = false;
+        gateOpenText.SetActive(false);
         inCollider = false;
     }
 
