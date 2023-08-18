@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Music")]
     public AudioSource audioSource;
     public AudioClip audioClip;
-
+    
     [Header("Movement")]
     public float moveSpeed;
 
@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+
     }
 
     private void FixedUpdate()

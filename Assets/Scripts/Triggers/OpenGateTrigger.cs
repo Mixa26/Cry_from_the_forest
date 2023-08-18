@@ -11,7 +11,8 @@ public class OpenGateTrigger : MonoBehaviour
     public GameObject keyhole;
     public Animator gateAnimator;
 
-    private bool inCollider;
+    private bool inCollider = false;
+    private bool alreadyPressed = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,8 +31,9 @@ public class OpenGateTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (inCollider && Input.GetKey(KeyCode.E))
+        if (inCollider && Input.GetKey(KeyCode.E) && !alreadyPressed)
         {
+            alreadyPressed = true;
             Destroy(gateOpenText);
             Destroy(chain1);
             Destroy(chain2);
