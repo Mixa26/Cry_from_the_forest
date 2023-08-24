@@ -24,8 +24,8 @@ public class DumpsterJumpscareTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (triggered && ((orientation.transform.rotation.y >= -0.90f && orientation.transform.rotation.y <= -0.80f) || (orientation.transform.rotation.y <= 0.90f && orientation.transform.rotation.y >= 0.80f)))
-        {
+        if (triggered && ((orientation.transform.rotation.y >= -0.99f && orientation.transform.rotation.y <= -0.70f) || (orientation.transform.rotation.y <= 0.99f && orientation.transform.rotation.y >= 0.70f)))
+        {   
             girl.GetComponent<Animator>().Play("HideGirl");
             triggered = false;
         }

@@ -34,12 +34,14 @@ public class PickupKeyTrigger : MonoBehaviour
     {
         if (inCollider && Input.GetKey(KeyCode.E))
         {
+            GetComponent<AudioSource>().Play();
             keyPickupText.SetActive(false);
             key.SetActive(false);
             deer.SetActive(true);
             deerJumpscareCollider.SetActive(true);
             gateCollider.SetActive(true);
             GetComponent<BoxCollider>().enabled = false;
+            inCollider = false;
         }
     }
 }
