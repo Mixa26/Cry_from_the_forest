@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DriveOffTrigger : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class DriveOffTrigger : MonoBehaviour
         }
     }
 
+    private void EndGame()
+    {
+        Application.Quit();
+    }
+
     private void Update()
     {
         if (inCollider && Input.GetKey(KeyCode.E))
@@ -36,6 +42,9 @@ public class DriveOffTrigger : MonoBehaviour
             GetComponent<BoxCollider>().enabled = false;
             gameEnd.SetActive(true);
             gameEnd.GetComponent<Animator>().Play("GameEnd");
+            Invoke("EndGame", 6.0f);
+            enabled = false;
         }
     }
+
 }

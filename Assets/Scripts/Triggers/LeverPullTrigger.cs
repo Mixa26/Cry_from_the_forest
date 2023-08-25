@@ -45,8 +45,8 @@ public class LeverPullTrigger : MonoBehaviour
             GetComponent<BoxCollider>().enabled = false;
             inCollider = false;
         }
-
-        if (alreadyPressed && (orientation.transform.rotation.y >= -0.96f && orientation.transform.rotation.y >= 0.96f))
+        
+        if (alreadyPressed && (orientation.transform.rotation.y <= -0.96f || orientation.transform.rotation.y >= 0.96f))
         {
             mask_jumpscare.GetComponent<AudioSource>().Play();
             mask_jumpscare.GetComponent<Animator>().Play("GoBellowFloor");
